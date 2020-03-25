@@ -37,7 +37,7 @@ def send_telegram(text: str):
     socks.set_default_proxy(socks.SOCKS5, "localhost", 9100)
     socket.socket = socks.socksocket
 
-    # Magic!
+    # DNS Magic!
     def getaddrinfo(*args):
          return [(socket.AF_INET, socket.SOCK_STREAM, 6, '', (args[0], args[1]))]
     socket.getaddrinfo = getaddrinfo
